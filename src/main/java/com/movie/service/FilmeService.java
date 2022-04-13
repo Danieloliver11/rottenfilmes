@@ -41,7 +41,7 @@ public class FilmeService {
 
 			FilmesVos = new FilmeVo(filmesEntitie);
 		}catch (NaoEncontradoException e) {
-			logger.error("NENHUM FILMER ENCONTRADO COM ID:{}"+id);
+			logger.error("NENHUM FILMER ENCONTRADO COM ID:"+id);
 			throw new NaoEncontradoException("Nenhum Filmer encontrado pelo ID:"+ id,e);
 		}
 		catch (Exception e) {
@@ -57,6 +57,7 @@ public class FilmeService {
 		FilmeEntity filmesEntitie = filmeRespFilmeRepository.findByTitulo(filmeVo.getTitulo());
 
 		if (filmesEntitie != null) {
+			logger.error("FILME JÁ CADASTRADO!");
 			throw new FilmeJaCadastradoException("Filme já cadastrado!");
 		}
 

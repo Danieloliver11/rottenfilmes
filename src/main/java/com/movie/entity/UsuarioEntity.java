@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "USER_TB")
@@ -22,9 +23,10 @@ public class UsuarioEntity implements Serializable{
 	@Id
 	@Column(name ="ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idUsuario;//
+	private Long idUsuario;
 	
-	@Column(name ="EMAI")
+	@Email
+	@Column(name ="EMAI",nullable = false)
 	private String email;
 	
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
