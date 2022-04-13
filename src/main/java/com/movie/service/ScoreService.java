@@ -44,17 +44,18 @@ public class ScoreService {
 		UsuarioEntity usuarioEntity =  usuarioRepository.findByEmail(scoreVo.getEmail());
 		if (usuarioEntity == null) {
 			 usuarioEntity = new UsuarioEntity(scoreVo.getEmail());
-			 
+			 logger.info("USUARIO SALVO NA APLICAÇÃO");
 			 usuarioEntity = usuarioRepository.saveAndFlush(usuarioEntity);
 		}
 		
 		
 		try {
-			 filmeEntity = filmeRepository.findById(scoreVo.getFilmeId()).orElseThrow(() -> new NaoEncontradoException("Nenhum filme encontrado!"));
+			 filmeEntity = filmeRepository.findById(scoreVo.getFilmeId()).orElseThrow(() -> new NaoEncontradoException("NENHUM FILME ENCONTRADO PELO ID:"+scoreVo.getFilmeId()));
 			
 			
 		}catch (NaoEncontradoException e) {
-			throw new NaoEncontradoException("Nenhum filme encontrado!");
+			logger.error("NENHUM FILME ENCONTRADO!");
+			throw new NaoEncontradoException("NENHUM FILME ENCONTRADO PELO ID:"+scoreVo.getFilmeId());
 		}
 		catch (Exception e) {
 			e.printStackTrace();

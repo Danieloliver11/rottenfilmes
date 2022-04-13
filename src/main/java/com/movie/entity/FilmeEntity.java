@@ -25,7 +25,7 @@ public class FilmeEntity  implements Serializable{
 	@Column(name ="ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
-	@Column(name ="TITULO")
+	@Column(name ="TITULO",nullable = false,unique = true)
 	private String titulo;
 	@Column(name ="CONTA")
 	private Integer conta;

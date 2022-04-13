@@ -25,7 +25,7 @@ public class ScoreEntity {
 	@JoinColumn(name ="ID_USER")
 	private UsuarioEntity usuario;
 	
-	@Column(name = "VALOR")
+	@Column(name = "VALOR",nullable = false)
 	private Double valor;
 	
 	
