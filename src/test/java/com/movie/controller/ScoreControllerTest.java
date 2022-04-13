@@ -18,8 +18,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.movie.AbstractControllerIT;
-import com.movie.impl.RestPageImpl;
-import com.movie.vo.FilmePostVo;
 import com.movie.vo.FilmeVo;
 import com.movie.vo.ScoreVo;
 

@@ -1,5 +1,7 @@
 package com.movie.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +13,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "SCORE_TB")
-public class ScoreEntity {
+public class ScoreEntity implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name ="ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
