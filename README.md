@@ -1,2 +1,2 @@
 # rottenfilmes
-projeto com finalidade de dar notas param os filmes e mostrar suas medias de notas.
+projeto com finalidade de dar notas para os filmes, mostrando a media de todas as notas.
